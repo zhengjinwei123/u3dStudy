@@ -1,0 +1,8 @@
+D:\xiazai\c#study\TcpServ\MysqlTest\bin\Debug\MysqlTest.exe.config
+D:\xiazai\c#study\TcpServ\MysqlTest\bin\Debug\MysqlTest.exe
+D:\xiazai\c#study\TcpServ\MysqlTest\bin\Debug\MysqlTest.pdb
+D:\xiazai\c#study\TcpServ\MysqlTest\obj\Debug\MysqlTest.csprojAssemblyReference.cache
+D:\xiazai\c#study\TcpServ\MysqlTest\obj\Debug\MysqlTest.csproj.CoreCompileInputs.cache
+D:\xiazai\c#study\TcpServ\MysqlTest\obj\Debug\MysqlTest.csproj.CopyComplete
+D:\xiazai\c#study\TcpServ\MysqlTest\obj\Debug\MysqlTest.exe
+D:\xiazai\c#study\TcpServ\MysqlTest\obj\Debug\MysqlTest.pdb

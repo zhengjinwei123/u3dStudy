@@ -1,0 +1,7 @@
+D:\xiazai\c#study\TcpServ\TcpServ\bin\Debug\TcpServ.exe.config
+D:\xiazai\c#study\TcpServ\TcpServ\bin\Debug\TcpServ.exe
+D:\xiazai\c#study\TcpServ\TcpServ\bin\Debug\TcpServ.pdb
+D:\xiazai\c#study\TcpServ\TcpServ\obj\Debug\TcpServ.csproj.CoreCompileInputs.cache
+D:\xiazai\c#study\TcpServ\TcpServ\obj\Debug\TcpServ.exe
+D:\xiazai\c#study\TcpServ\TcpServ\obj\Debug\TcpServ.pdb
+D:\xiazai\c#study\TcpServ\TcpServ\obj\Debug\TcpServ.csprojAssemblyReference.cache
