@@ -55,12 +55,12 @@ namespace GameServer.Servers
 			}
 		}
 
-		public void SendResponse(Client client, RequestCode requestCode, string data) {
-			client.Send(requestCode, data);
+		public void SendResponse(Client client, ActionCode actionCode, string data) {
+			client.Send(actionCode, data);
 		}
 
-		public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
-			controllerManager.HandleRequest(requestCode, actionCode, data, client);
+		public void HandleResponse(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
+			controllerManager.HandleResponse(requestCode, actionCode, data, client);
 		}
 	}
 }

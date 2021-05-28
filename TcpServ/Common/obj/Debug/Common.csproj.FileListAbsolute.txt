@@ -1,0 +1,5 @@
+D:\xiazai\c#study\TcpServ\Common\bin\Debug\Common.dll
+D:\xiazai\c#study\TcpServ\Common\bin\Debug\Common.pdb
+D:\xiazai\c#study\TcpServ\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\xiazai\c#study\TcpServ\Common\obj\Debug\Common.dll
+D:\xiazai\c#study\TcpServ\Common\obj\Debug\Common.pdb

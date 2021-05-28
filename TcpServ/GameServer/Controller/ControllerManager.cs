@@ -23,9 +23,12 @@ namespace GameServer.Controller
 		{
 			DefaultController defaultController = new DefaultController();
 			controllerDict.Add(defaultController.RequestCode, defaultController);
+
+			UserController userController = new UserController();
+			controllerDict.Add(userController.RequestCode, userController);
 		}
 
-		public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
+		public void HandleResponse(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
 			BaseController controller;
 			bool isGet = controllerDict.TryGetValue(requestCode, out controller);
 			if (isGet == false) {
@@ -45,7 +48,7 @@ namespace GameServer.Controller
 				return;
 			}
 
-			server.SendResponse(client, requestCode, ret as string);
+			server.SendResponse(client, actionCode, ret as string);
 		}
 	}
 }
