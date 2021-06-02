@@ -9,15 +9,16 @@ public class StartPanel : BasePanel {
 	Button loginButton;
 	private Animator btnAnimator;
 
-	public override void OnEnter()
+	public void Awake()
 	{
-		base.OnEnter();
 		loginButton = transform.Find("LoginButton").GetComponent<Button>();
 		btnAnimator = loginButton.GetComponent<Animator>();
 		loginButton.onClick.AddListener(OnLoginButtonClick);
 	}
 
 	private void OnLoginButtonClick() {
+		PlayClickSound();
+
 		uiMgr.PushPanel(UIPanelType.Login);
 	}
 

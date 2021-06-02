@@ -22,6 +22,7 @@ namespace GameServer.Servers
 
 		public Server(string ipStr, int port) {
 			SetIpAndPort(ipStr, port);
+			InitController();
 		}
 
 		public void  InitController() {
@@ -44,13 +45,19 @@ namespace GameServer.Servers
 
 			Client client = new Client(clientSocket, this);
 			client.Start();
+
+			Console.WriteLine("客户端连接来了");
+
 			clientList.Add(client);
+
+			serverSocket.BeginAccept(AcceptCallback, null);
 		}
 
 		public void RemoveClient(Client client) {
 
 			lock (clientList)
 			{
+				Console.WriteLine("关闭客户端连接");
 				clientList.Remove(client);
 			}
 		}
@@ -59,8 +66,8 @@ namespace GameServer.Servers
 			client.Send(actionCode, data);
 		}
 
-		public void HandleResponse(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
-			controllerManager.HandleResponse(requestCode, actionCode, data, client);
+		public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
+			controllerManager.HandleRequest(requestCode, actionCode, data, client);
 		}
 	}
 }

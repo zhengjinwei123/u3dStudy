@@ -4,3 +4,10 @@ D:\xiazai\c#study\TcpServ\TcpClient\bin\Debug\TcpClient.pdb
 D:\xiazai\c#study\TcpServ\TcpClient\obj\Debug\TcpClient.csproj.CoreCompileInputs.cache
 D:\xiazai\c#study\TcpServ\TcpClient\obj\Debug\TcpClient.exe
 D:\xiazai\c#study\TcpServ\TcpClient\obj\Debug\TcpClient.pdb
+D:\xiazai\gitU3d\u3dStudy\TcpServ\TcpClient\bin\Debug\TcpClient.exe.config
+D:\xiazai\gitU3d\u3dStudy\TcpServ\TcpClient\bin\Debug\TcpClient.exe
+D:\xiazai\gitU3d\u3dStudy\TcpServ\TcpClient\bin\Debug\TcpClient.pdb
+D:\xiazai\gitU3d\u3dStudy\TcpServ\TcpClient\obj\Debug\TcpClient.csprojAssemblyReference.cache
+D:\xiazai\gitU3d\u3dStudy\TcpServ\TcpClient\obj\Debug\TcpClient.csproj.CoreCompileInputs.cache
+D:\xiazai\gitU3d\u3dStudy\TcpServ\TcpClient\obj\Debug\TcpClient.exe
+D:\xiazai\gitU3d\u3dStudy\TcpServ\TcpClient\obj\Debug\TcpClient.pdb

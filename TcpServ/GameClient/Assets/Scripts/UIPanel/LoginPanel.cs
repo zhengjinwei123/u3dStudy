@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System;
+using Common;
 
 public class LoginPanel : BasePanel {
 
@@ -13,19 +14,8 @@ public class LoginPanel : BasePanel {
 	private LoginRequest loginRequest;
 
 
-	public override void OnEnter()
+	private void Awake()
 	{
-		base.OnEnter();
-		gameObject.SetActive(true);
-		
-
-		transform.localScale = Vector3.zero;
-		transform.DOScale(1, .5f);
-
-		transform.localPosition = new Vector3(1000, 0, 0);
-		transform.DOLocalMove(Vector3.zero, .5f).OnComplete(() => {
-			transform.DOShakePosition(100);
-		});
 
 		closeButton = transform.Find("CloseButton").GetComponent<Button>();
 		closeButton.onClick.AddListener(OnCloseButtonClick);
@@ -39,10 +29,17 @@ public class LoginPanel : BasePanel {
 
 
 		loginRequest = GetComponent<LoginRequest>();
+
+	}
+	public override void OnEnter()
+	{
+		EnterAnim();
 	}
 
 	private void OnLoginButtonClick()
 	{
+		PlayClickSound();
+
 		string msg = "";
 		if (string.IsNullOrEmpty(usernameIF.text)) {
 			msg += "用戶名不能为空 ";
@@ -59,29 +56,66 @@ public class LoginPanel : BasePanel {
 
 	private void OnRegisterButtonClick()
 	{
+		PlayClickSound();
 		uiMgr.PushPanel(UIPanelType.Register);
 	}
 
 	private void OnCloseButtonClick()
 	{
-		transform.DOScale(0, .5f);
-		Tweener tweener = transform.DOLocalMove(new Vector3(100, 0, 0), .5f);
+		//Debug.Log("OnCloseButtonClick  2222");
+		PlayClickSound();
 
-
-		tweener.OnComplete(() => {
-			uiMgr.PopPanel();
-		});
+		uiMgr.PopPanel();
 	}
 
 	public override void OnExit()
 	{
-		base.OnExit();
-
-		gameObject.SetActive(false);
+		HideAnim();
 	}
+
+	public void OnLoginResponse(ReturnCode returnCode)
+	{
+		if (returnCode == ReturnCode.Success)
+		{
+			// TODO
+			//uiMgr.ShowMessageASync("success");
+			uiMgr.PushPanelAsync(UIPanelType.RoomList);
+		}
+		else {
+			uiMgr.ShowMessageASync("用户名或密码错误");
+		}
+	}
+
 
 	public override void OnResume()
 	{
-		base.OnResume();
+		EnterAnim();
+	}
+
+	private void EnterAnim() {
+		gameObject.SetActive(true);
+		transform.localScale = Vector3.zero;
+		transform.DOScale(1, .5f);
+
+		transform.localPosition = new Vector3(1000, 0, 0);
+		transform.DOLocalMove(Vector3.zero, .5f).OnComplete(() =>
+		{
+			transform.DOShakePosition(100);
+		});
+	}
+
+
+	private void HideAnim() {
+		transform.DOScale(0, .5f);
+		Tweener tweener = transform.DOLocalMove(new Vector3(1000, 0, 0), .5f);
+		tweener.OnComplete(() =>
+		{
+			gameObject.SetActive(false);
+		});
+	}
+
+	public override void OnPause()
+	{
+		HideAnim();
 	}
 }

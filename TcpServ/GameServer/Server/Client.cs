@@ -40,6 +40,10 @@ namespace GameServer.Servers
 
 			try
 			{
+				if (clientSocket == null || clientSocket.Connected == false) {
+					return;
+				}
+
 				int count = clientSocket.EndReceive(ar);
 				if (count <= 0)
 				{
@@ -69,12 +73,22 @@ namespace GameServer.Servers
 		}
 
 		private void OnProcessMessage(RequestCode requestCode, ActionCode actionCode, string data) {
-			server.HandleResponse(requestCode, actionCode, data, this);
+
+			Console.WriteLine("请求来了:" + requestCode + ":" + actionCode + ":" + data);
+
+			server.HandleRequest(requestCode, actionCode, data, this);
 		}
 
 		public void Send(ActionCode actionCode, string data) {
-			byte[] bytes = Message.PackData(actionCode, data);
-			clientSocket.Send(bytes);
+
+			try
+			{
+				byte[] bytes = Message.PackData(actionCode, data);
+				clientSocket.Send(bytes);
+			}
+			catch (Exception e) {
+				Console.WriteLine("无法发送消息:" + e);
+			}
 		}
 	}
 }

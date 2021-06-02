@@ -18,6 +18,7 @@ public class ClientManager: BaseManager  {
 		msg = new Message();
 		clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
+		Debug.Log("socket 连接准备");
 		try
 		{
 			clientSocket.Connect(IP, PORT);
@@ -36,6 +37,7 @@ public class ClientManager: BaseManager  {
 	{
 		try
 		{
+			if (clientSocket == null || clientSocket.Connected == false) return;
 			int count = clientSocket.EndReceive(ar);
 
 			msg.ReadMessage(count, OnProcessData);
@@ -54,8 +56,12 @@ public class ClientManager: BaseManager  {
 	}
 
 	public void SendRequest(RequestCode reqCode, ActionCode actionCode, string data) {
+		Debug.Log("发送消息: " + reqCode + ":" + actionCode + ":" + data);
+
+
 		byte[] bytes = Message.PackData(reqCode, actionCode, data);
-		clientSocket.Send(bytes);
+		int n =  clientSocket.Send(bytes);
+		Debug.Log("发送消息数: " + n);
 	}
 
 	public override void OnDestroy()
@@ -66,6 +72,7 @@ public class ClientManager: BaseManager  {
 		{
 			if (clientSocket != null) {
 				clientSocket.Close();
+				clientSocket = null;
 			}
 		}
 		catch (Exception e) {

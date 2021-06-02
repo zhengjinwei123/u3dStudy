@@ -1,9 +1,0 @@
-D:\xiazai\c#study\TcpServ\Common\bin\Debug\netstandard1.0\Common.deps.json
-D:\xiazai\c#study\TcpServ\Common\bin\Debug\netstandard1.0\Common.dll
-D:\xiazai\c#study\TcpServ\Common\bin\Debug\netstandard1.0\Common.pdb
-D:\xiazai\c#study\TcpServ\Common\obj\Debug\netstandard1.0\Common.csprojAssemblyReference.cache
-D:\xiazai\c#study\TcpServ\Common\obj\Debug\netstandard1.0\Common.csproj.ResolveComReference.cache
-D:\xiazai\c#study\TcpServ\Common\obj\Debug\netstandard1.0\Common.csproj.CoreCompileInputs.cache
-D:\xiazai\c#study\TcpServ\Common\obj\Debug\netstandard1.0\Common.AssemblyInfo.cs
-D:\xiazai\c#study\TcpServ\Common\obj\Debug\netstandard1.0\Common.dll
-D:\xiazai\c#study\TcpServ\Common\obj\Debug\netstandard1.0\Common.pdb

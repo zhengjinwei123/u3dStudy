@@ -8,12 +8,16 @@ public class MessagePanel : BasePanel {
 	private Text text;
 	private float showTime = 1;
 
-	public override void OnEnter()
+	private string message = null;
+
+	public void Awake()
 	{
-		base.OnEnter();
 		text = GetComponent<Text>();
 		text.enabled = false;
+	}
 
+	public override void OnEnter()
+	{
 		uiMgr.InjectMsgPanel(this);
 	}
 
@@ -24,6 +28,18 @@ public class MessagePanel : BasePanel {
 		text.enabled = true;
 
 		Invoke("Hide", showTime);
+	}
+
+	private void Update() {
+		if (this.message == null) {
+			return;
+		}
+		ShowMessage(this.message);
+		this.message = null;
+	}
+
+	public void ShowMessageASync(string msg) {
+		this.message = msg;
 	}
 
 	private void Hide() {

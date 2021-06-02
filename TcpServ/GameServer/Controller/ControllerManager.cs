@@ -28,7 +28,7 @@ namespace GameServer.Controller
 			controllerDict.Add(userController.RequestCode, userController);
 		}
 
-		public void HandleResponse(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
+		public void HandleRequest(RequestCode requestCode, ActionCode actionCode, string data, Client client) {
 			BaseController controller;
 			bool isGet = controllerDict.TryGetValue(requestCode, out controller);
 			if (isGet == false) {

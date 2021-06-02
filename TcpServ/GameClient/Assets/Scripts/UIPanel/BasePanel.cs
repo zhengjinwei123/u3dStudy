@@ -5,8 +5,14 @@ public class BasePanel : MonoBehaviour {
 
 	protected UIManager uiMgr;
 
+	protected GameFacade facade;
+
 	public UIManager UIMgr {
 		set { uiMgr = value;  }
+	}
+
+	public GameFacade Facade {
+		set { facade = value;  }
 	}
 
     /// <summary>
@@ -41,4 +47,8 @@ public class BasePanel : MonoBehaviour {
     {
 
     }
+
+	protected void PlayClickSound() {
+		facade.PlayNormalSound(AudioManager.Sound_ButtonClick);
+	}
 }

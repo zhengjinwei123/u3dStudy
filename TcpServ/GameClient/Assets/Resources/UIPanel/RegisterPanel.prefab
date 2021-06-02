@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 222923174945111498}
   - component: {fileID: 114234858269396262}
   - component: {fileID: 114334533393973558}
+  - component: {fileID: 114393855892297080}
   m_Layer: 5
   m_Name: RegisterPanel
   m_TagString: Untagged
@@ -713,6 +714,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114393855892297080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1340421321515408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ed87018e822e34885103179eb06437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114538646294932290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1380,8 +1392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.099983, y: 48}
-  m_SizeDelta: {x: 629.4, y: 376}
+  m_AnchoredPosition: {x: 22, y: -14.6}
+  m_SizeDelta: {x: 633.2, y: 501.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224574675867927680
 RectTransform:
