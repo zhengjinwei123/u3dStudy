@@ -13,6 +13,7 @@ public class BasePanel : MonoBehaviour {
 
 	public GameFacade Facade {
 		set { facade = value;  }
+		get { return facade;  }
 	}
 
     /// <summary>
@@ -49,6 +50,6 @@ public class BasePanel : MonoBehaviour {
     }
 
 	protected void PlayClickSound() {
-		facade.PlayNormalSound(AudioManager.Sound_ButtonClick);
+		Facade.PlayNormalSound(AudioManager.Sound_ButtonClick);
 	}
 }

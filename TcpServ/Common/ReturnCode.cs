@@ -7,6 +7,8 @@ namespace Common
 	public enum ReturnCode
 	{
 		Success,
-		Fail
+		Fail,
+		NotFound,
+		WaitingPlayerJoin,
 	}
 }

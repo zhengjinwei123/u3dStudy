@@ -9,5 +9,7 @@ public enum UIPanelType  {
 	Start,
 	Login,
 	Register,
-	RoomList
+	RoomList,
+	Room,
+	Game,
 }

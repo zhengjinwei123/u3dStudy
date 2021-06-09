@@ -13,9 +13,12 @@ namespace GameServer.Controller
 	class UserController :  BaseController
 	{
 		private UserDAO userDAO;
+		private ResultDAO resultDAO;
+
 		public UserController() {
 			requestCode = RequestCode.User;
 			userDAO = new UserDAO();
+			resultDAO = new ResultDAO();
 		}
 
 		public string Login(string data, Client client, Server server) {
@@ -27,7 +30,10 @@ namespace GameServer.Controller
 				return ((int)ReturnCode.Fail).ToString();
 			}
 			else {
-				return ((int)ReturnCode.Success).ToString();
+
+				Result res = resultDAO.GetResultByUserrid(client.MysqlConn, user.Id);
+				client.SetUserData(user, res);
+				return string.Format("{0},{1},{2},{3}", ((int)ReturnCode.Success).ToString(), user.Username, res.TotalCount, res.WinCount);
 			}
 		}
 

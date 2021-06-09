@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114579733755739192}
   - component: {fileID: 95190195161458608}
   m_Layer: 5
-  m_Name: Enter
+  m_Name: JoinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 222575315634104736}
   - component: {fileID: 114792557635141308}
   - component: {fileID: 114858161184632086}
+  - component: {fileID: 114585596641314022}
   m_Layer: 5
   m_Name: RoomItem
   m_TagString: Untagged
@@ -256,6 +257,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u52A0\u5165"
+--- !u!114 &114585596641314022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1411724011132648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc91503405e44bd4d926d6b00e1cc643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: {fileID: 114810579710110958}
+  totalCount: {fileID: 114465990720114982}
+  winCount: {fileID: 114993786318174756}
+  joinButton: {fileID: 114579733755739192}
 --- !u!114 &114792557635141308
 MonoBehaviour:
   m_ObjectHideFlags: 1

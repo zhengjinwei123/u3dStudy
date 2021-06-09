@@ -1,4 +1,5 @@
 ﻿using Common;
+using GameServer.Model;
 using GameServer.Tool;
 using MySql.Data.MySqlClient;
 using System;
@@ -17,9 +18,35 @@ namespace GameServer.Servers
 		private Message msg = new Message();
 		private MySqlConnection mysqlConn;
 
+		private Result result;
+		private User user;
+		private Room room;
+
 		public MySqlConnection MysqlConn {
 			get { return mysqlConn;  }
 		}
+
+		public int HP {
+			get; set;
+		}
+
+		public bool IsDie() {
+			return HP <= 0;
+		}
+
+		public bool TakeDamage(int damage) {
+			HP -= damage;
+			HP = Math.Max(HP, 0);
+			if (HP <= 0) return true;
+
+			return false;
+		}
+
+		public Room Room {
+			set { room = value; }
+			get { return room;  }
+		}
+
 		public Client() {
 
 		}
@@ -29,6 +56,11 @@ namespace GameServer.Servers
 			this.server = server;
 
 			this.mysqlConn = ConnHelper.Connect();
+		}
+
+		public void SetUserData(User user, Result result) {
+			this.user = user;
+			this.result = result;
 		}
 
 		public void Start() {
@@ -67,6 +99,10 @@ namespace GameServer.Servers
 				clientSocket = null;
 			}
 
+			if (room != null) {
+				room.QuitRoom(this);
+			}
+
 			ConnHelper.CloseConnection(mysqlConn);
 
 			server.RemoveClient(this);
@@ -89,6 +125,18 @@ namespace GameServer.Servers
 			catch (Exception e) {
 				Console.WriteLine("无法发送消息:" + e);
 			}
+		}
+
+		public string GetUserData() {
+			return user.Id + "," + user.Username + "," + result.TotalCount + "," + result.WinCount;
+		}
+
+		public int GetUserId() {
+			return user.Id;
+		}
+
+		public bool IsHouseOwner() {
+			return room.IsHouseOwner(this);
 		}
 	}
 }

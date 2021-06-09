@@ -1,4 +1,5 @@
 ﻿using Common;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,13 @@ public class GameFacade : MonoBehaviour {
 	private CameraManager cameraMgr;
 	private RequestManager requestMgr;
 	private ClientManager clientMgr;
+
+	public void StartPlaying()
+	{
+
+	}
+
+	private bool isEnterPlaying = false;
 
 	private static GameFacade _instance;
 	public static GameFacade Instance {
@@ -59,6 +67,11 @@ public class GameFacade : MonoBehaviour {
 		clientMgr.OnInit();
 	}
 
+	public void GameOver()
+	{
+
+	}
+
 	private void DestroyManager() {
 		uiMgr.OnDestroy();
 		audioMgr.OnDestroy();
@@ -75,6 +88,18 @@ public class GameFacade : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		UpdateManager();
+		if (isEnterPlaying) {
+			EnterPlaying();
+			isEnterPlaying = false;
+		}
+	}
+
+	private void EnterPlaying() {
+
+	}
+
+	private void UpdateManager() {
 		uiMgr.Update();
 		audioMgr.Update();
 		playerMgr.Update();
@@ -105,5 +130,19 @@ public class GameFacade : MonoBehaviour {
 
 	public void PlayNormalSound(string soundName) {
 		audioMgr.PlayNormalSound(soundName);
+	}
+
+	public void SetUserData(UserData ud) {
+		playerMgr.UserData = ud;
+	}
+
+	public UserData GetUserData() {
+		return playerMgr.UserData;
+	}
+
+	public void EnterPlayingAsync()
+	{
+		isEnterPlaying = true;
+		Debug.Log("进入游戏了");
 	}
 }
