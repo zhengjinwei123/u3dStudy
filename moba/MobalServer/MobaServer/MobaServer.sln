@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobaServer", "MobaServer\MobaServer.csproj", "{E65EB09E-066D-4D8C-BF3D-CD3DC1AC157B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E65EB09E-066D-4D8C-BF3D-CD3DC1AC157B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65EB09E-066D-4D8C-BF3D-CD3DC1AC157B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65EB09E-066D-4D8C-BF3D-CD3DC1AC157B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65EB09E-066D-4D8C-BF3D-CD3DC1AC157B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {327418CF-1928-437A-82AB-251FD5949C3A}
+	EndGlobalSection
+EndGlobal
